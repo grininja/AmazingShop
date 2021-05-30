@@ -1,0 +1,14 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "myproducts",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authamazingshop7d142b99",
+            "Outputs.UserPoolId"
+        ]
+    },
+    "S3DeploymentBucket": "amplify-amazingshop-dev-173245-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/68d176ccb015f3365f90224238920d94283e11b2"
+}

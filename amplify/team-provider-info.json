@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-amazingshop-dev-173245-authRole",
+            "UnauthRoleArn": "arn:aws:iam::750945858441:role/amplify-amazingshop-dev-173245-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::750945858441:role/amplify-amazingshop-dev-173245-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-amazingshop-dev-173245-deployment",
+            "UnauthRoleName": "amplify-amazingshop-dev-173245-unauthRole",
+            "StackName": "amplify-amazingshop-dev-173245",
+            "StackId": "arn:aws:cloudformation:us-east-2:750945858441:stack/amplify-amazingshop-dev-173245/232edc00-b89a-11eb-a245-02d316f4de6e",
+            "AmplifyAppId": "d35u1atztkmvfe"
+        },
+        "categories": {
+            "auth": {
+                "amazingshop7d142b99": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "auth": {
+        "amazingshop7d142b99": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [],
+            "customAuth": false
+        }
+    },
+    "storage": {
+        "productimage": {
+            "service": "S3",
+            "providerPlugin": "awscloudformation"
+        }
+    },
+    "function": {
+        "processpayment": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda",
+            "dependsOn": []
+        },
+        "createorder": {
+            "build": true,
+            "providerPlugin": "awscloudformation",
+            "service": "Lambda",
+            "dependsOn": []
+        }
+    },
+    "api": {
+        "myproducts": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "authConfig": {
+                    "additionalAuthenticationProviders": [
+                        {
+                            "authenticationType": "API_KEY",
+                            "apiKeyConfig": {
+                                "description": "guest user access",
+                                "apiKeyExpirationDays": 60
+                            }
+                        }
+                    ],
+                    "defaultAuthentication": {
+                        "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+                        "userPoolConfig": {
+                            "userPoolId": "authamazingshop7d142b99"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

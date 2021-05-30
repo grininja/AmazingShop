@@ -1,0 +1,159 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-amazingshop-dev-173245-authRole",
+			"UnauthRoleArn": "arn:aws:iam::750945858441:role/amplify-amazingshop-dev-173245-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::750945858441:role/amplify-amazingshop-dev-173245-authRole",
+			"Region": "us-east-2",
+			"DeploymentBucketName": "amplify-amazingshop-dev-173245-deployment",
+			"UnauthRoleName": "amplify-amazingshop-dev-173245-unauthRole",
+			"StackName": "amplify-amazingshop-dev-173245",
+			"StackId": "arn:aws:cloudformation:us-east-2:750945858441:stack/amplify-amazingshop-dev-173245/232edc00-b89a-11eb-a245-02d316f4de6e",
+			"AmplifyAppId": "d35u1atztkmvfe"
+		}
+	},
+	"auth": {
+		"amazingshop7d142b99": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false,
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-amazingshop-dev-173245-deployment/amplify-cfn-templates/auth/amazingshop7d142b99-cloudformation-template.yml",
+				"logicalId": "authamazingshop7d142b99"
+			},
+			"lastPushTimeStamp": "2021-05-25T15:20:07.424Z",
+			"output": {
+				"AppClientSecret": "3kk1isi80gtf5085c6eb2fu1n630qm40osd7ddgn0e7q522bo2g",
+				"UserPoolId": "us-east-2_qV2l7pnMM",
+				"AppClientIDWeb": "6d7aujbimutsqv36jma64is9c3",
+				"AppClientID": "247o348g2o7uad33ash7n13pc5",
+				"IdentityPoolId": "us-east-2:38d67831-8d06-4614-aca0-84bbe9e39996",
+				"IdentityPoolName": "amazingshop7d142b99_identitypool_7d142b99__dev",
+				"UserPoolName": "amazingshop7d142b99_userpool_7d142b99"
+			},
+			"lastPushDirHash": "99lW86M4a1IbaQasNtOf6hgG3uo="
+		}
+	},
+	"storage": {
+		"productimage": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-amazingshop-dev-173245-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storageproductimage"
+			},
+			"lastPushTimeStamp": "2021-05-25T15:20:07.429Z",
+			"output": {
+				"BucketName": "productimage173245-dev",
+				"Region": "us-east-2"
+			},
+			"lastPushDirHash": "OT+Nk9xfSFA15GA5NOI5SFyAQEY="
+		}
+	},
+	"function": {
+		"processpayment": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [],
+			"lastBuildTimeStamp": "2021-05-19T14:11:09.411Z",
+			"lastPackageTimeStamp": "2021-05-19T14:11:09.664Z",
+			"distZipFilename": "processpayment-4f682b59702b31356f75-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-amazingshop-dev-173245-deployment/amplify-cfn-templates/function/processpayment-cloudformation-template.json",
+				"logicalId": "functionprocesspayment"
+			},
+			"lastPushTimeStamp": "2021-05-25T15:20:07.433Z",
+			"output": {
+				"Region": "us-east-2",
+				"Arn": "arn:aws:lambda:us-east-2:750945858441:function:processpayment-dev",
+				"Name": "processpayment-dev",
+				"LambdaExecutionRole": "amazingshopLambdaRole889fe6e7-dev"
+			},
+			"lastPushDirHash": "MQzxDrNoCB3gT6irI/932XVipbk="
+		},
+		"createorder": {
+			"build": true,
+			"providerPlugin": "awscloudformation",
+			"service": "Lambda",
+			"dependsOn": [],
+			"lastBuildTimeStamp": "2021-05-19T14:11:09.432Z",
+			"lastPackageTimeStamp": "2021-05-19T14:11:09.717Z",
+			"distZipFilename": "createorder-6e65426d51724445685a-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-amazingshop-dev-173245-deployment/amplify-cfn-templates/function/createorder-cloudformation-template.json",
+				"logicalId": "functioncreateorder"
+			},
+			"lastPushTimeStamp": "2021-05-25T15:20:07.438Z",
+			"output": {
+				"Region": "us-east-2",
+				"Arn": "arn:aws:lambda:us-east-2:750945858441:function:createorder-dev",
+				"Name": "createorder-dev",
+				"LambdaExecutionRole": "amazingshopLambdaRolecee93ab2-dev"
+			},
+			"lastPushDirHash": "cagKqnUKxoStnUoV72fwH8R47AA="
+		}
+	},
+	"api": {
+		"myproducts": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [
+						{
+							"authenticationType": "API_KEY",
+							"apiKeyConfig": {
+								"description": "guest user access",
+								"apiKeyExpirationDays": 60
+							}
+						}
+					],
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
+						"userPoolConfig": {
+							"userPoolId": "authamazingshop7d142b99"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "uexdv7fxlffkval6vgytbsm4ou",
+				"GraphQLAPIEndpointOutput": "https://nvcqps4abzaapn6mvm46bzbifu.appsync-api.us-east-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-4kjeacmhp5dyjkzcl442njqtdu"
+			},
+			"lastPushTimeStamp": "2021-05-25T15:20:07.449Z",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-amazingshop-dev-173245-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apimyproducts"
+			},
+			"lastPushDirHash": "jYDJFkkdf1C8VOIOSPI1Z42Ugds="
+		},
+		"myproducts-dev": {
+			"service": "AppSync",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "AMAZON_COGNITO_USER_POOLS"
+					},
+					"additionalAuthenticationProviders": [
+						{
+							"authenticationType": "API_KEY"
+						}
+					],
+					"userPoolConfig": {
+						"userPoolId": "us-east-2_qV2l7pnMM",
+						"awsRegion": "us-east-2",
+						"defaultAction": "ALLOW",
+						"appIdClientRegex": null
+					}
+				},
+				"GraphQLAPIIdOutput": "uexdv7fxlffkval6vgytbsm4ou",
+				"GraphQLAPIEndpointOutput": "https://nvcqps4abzaapn6mvm46bzbifu.appsync-api.us-east-2.amazonaws.com/graphql",
+				"name": "myproducts-dev",
+				"region": "us-east-2",
+				"GraphQLAPIKeyOutput": "da2-4kjeacmhp5dyjkzcl442njqtdu"
+			},
+			"lastPushTimeStamp": "2021-05-21T17:15:53.771Z"
+		}
+	}
+}
